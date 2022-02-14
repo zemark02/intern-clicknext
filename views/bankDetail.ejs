@@ -1,0 +1,89 @@
+<% if(data.bank.bankName == "Krungthai Bank"){ %>
+<div class="row bg-info">
+    <div class="col-3  d-flex flex-row justify-content-center">
+      <div class="div-img my-3 d-flex flex-row justify-content-end ">
+        <img src="/img/krungthai.png" alt="" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-9">
+      <h1 class="my-3 text-light"><%=data.bank.bankName %></h1>
+      <h4 class="mb-3 text-light"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></h4>
+      <h4 class="mb-3 text-light">
+        <% let accNumber = [...data.bank.accountNumber].slice(0,3).join("") +  "-" + [...data.bank.accountNumber].slice(3,7).join("") +"-" +[...data.bank.accountNumber].slice(7,).join("") %>
+        <%= accNumber %>
+      </h4>
+    </div>
+  </div>
+<% }%>
+
+<% if(data.bank.bankName == "TMB Bank"){ %>
+    <div class="row" style="background-color: #4682b4;">
+        <div class="col-3  d-flex flex-row justify-content-center">
+          <div class="div-img my-3 d-flex flex-row justify-content-end ">
+            <img src="/img/tmb.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-9">
+          <h1 class="my-3 text-light"><%=data.bank.bankName %></h1>
+          <h4 class="mb-3 text-light"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></h4>
+          <h4 class="mb-3 text-light">
+            <% let accNumber = [...data.bank.accountNumber].slice(0,3).join("") +  "-" + [...data.bank.accountNumber].slice(3,7).join("") +"-" +[...data.bank.accountNumber].slice(7,).join("") %>
+            <%= accNumber %>
+          </h4>
+        </div>
+      </div>
+<% }%>
+
+<% if(data.bank.bankName == "Bangkok Bank"){ %>
+    <div class="row" style="background-color: blue;">
+        <div class="col-3  d-flex flex-row justify-content-center">
+          <div class="div-img my-3 d-flex flex-row justify-content-end ">
+            <img src="/img/bangkok.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-9">
+          <h1 class="my-3 text-light"><%=data.bank.bankName %></h1>
+          <h4 class="mb-3 text-light"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></h4>
+          <h4 class="mb-3 text-light">
+            <% let accNumber = [...data.bank.accountNumber].slice(0,3).join("") +  "-" + [...data.bank.accountNumber].slice(3,7).join("") +"-" +[...data.bank.accountNumber].slice(7,).join("") %>
+            <%= accNumber %>
+          </h4>
+        </div>
+      </div>
+<% }%>
+
+<% if(data.bank.bankName == "Siam Commercial Bank"){ %>
+    <div class="row" style="background-color: purple;">
+        <div class="col-3  d-flex flex-row justify-content-center">
+          <div class="div-img my-3 d-flex flex-row justify-content-end ">
+            <img src="/img/scb.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-9">
+          <h1 class="my-3 text-light"><%=data.bank.bankName %></h1>
+          <h4 class="mb-3 text-light"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></h4>
+          <h4 class="mb-3 text-light">
+            <% let accNumber = [...data.bank.accountNumber].slice(0,3).join("") +  "-" + [...data.bank.accountNumber].slice(3,7).join("") +"-" +[...data.bank.accountNumber].slice(7,).join("") %>
+            <%= accNumber %>
+          </h4>
+        </div>
+      </div>
+<% }%>
+
+<% if(data.bank.bankName == "Kasikorn Bank"){ %>
+    <div class="row bg-success">
+        <div class="col-3  d-flex flex-row justify-content-center">
+          <div class="div-img my-3 d-flex flex-row justify-content-end ">
+            <img src="/img/kasikorn.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-9">
+          <h1 class="my-3 text-light"><%=data.bank.bankName %></h1>
+          <h4 class="mb-3 text-light"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></h4>
+          <h4 class="mb-3 text-light">
+            <% let accNumber = [...data.bank.accountNumber].slice(0,3).join("") +  "-" + [...data.bank.accountNumber].slice(3,7).join("") +"-" +[...data.bank.accountNumber].slice(7,).join("") %>
+            <%= accNumber %>
+          </h4>
+        </div>
+      </div>
+<% }%>

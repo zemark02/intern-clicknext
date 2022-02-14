@@ -1,0 +1,113 @@
+<table class="table" id="table-deposit">
+    <thead>
+      <tr>
+        <th scope="col" class="fs-5 py-4">#</th>
+        <th scope="col" class="fs-5 py-4">Action</th>
+        <th scope="col" class="fs-5 py-4">Amount</th>
+        <th scope="col" class="fs-5 py-4">Datetime</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% let orderDeposit = 1 %>
+
+        <% data.paymentDeposit.forEach( deposit=>{ %>
+
+            <tr>
+            <th scope="row" class="py-4"><%=orderDeposit%></th>
+            <td  class="fs-5 text-success py-4"><%=deposit.action%></td>
+            <td  class="fs-5 py-4"><%= deposit.amount%></td>
+            <td  class="fs-5 py-4"><%= deposit.createdAt.toString().split("GMT")[0] %></td>
+            </tr>
+            <%orderDeposit = orderDeposit + 1%>
+        <% }) %>
+
+    </tbody>
+  </table>
+
+  <table class="table" id="table-withdraw">
+    <thead>
+      <tr>
+        <th scope="col" class="fs-5 py-4">#</th>
+        <th scope="col" class="fs-5 py-4">Action</th>
+        <th scope="col" class="fs-5 py-4">Amount</th>
+        <th scope="col" class="fs-5 py-4">Datetime</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% let orderWithdraw = 1 %>
+
+        <% data.paymentWithdraw.forEach( withdraw=>{ %>
+
+            <tr>
+            <th scope="row" class="py-4"><%=orderWithdraw%></th>
+            <td  class="fs-5 text-danger py-4"><%=withdraw.action%></td>
+            <td  class="fs-5 py-4"><%= withdraw.amount%></td>
+            <td  class="fs-5 py-4"><%= withdraw.createdAt.toString().split("GMT")[0] %></td>
+            </tr>
+            <%orderWithdraw = orderWithdraw + 1%>
+        <% }) %>
+    </tbody>
+  </table>
+
+  <table class="table" id="table-transfer-withdraw">
+    <thead>
+      <tr>
+        <th scope="col" class="fs-5 py-4">#</th>
+        <th scope="col" class="fs-5 py-4">Action</th>
+        <th scope="col" class="fs-5 py-4">From</th>
+        <th scope="col" class="fs-5 py-4">Amount</th>
+        <th scope="col" class="fs-5 py-4">To</th>
+        <th scope="col" class="fs-5 py-4">Bank Name</th>
+        <th scope="col" class="fs-5 py-4">Datetime</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% let orderTranferWithdraw = 1 %>
+
+        <% data.transferWithdraw.forEach( transferwithdraw=>{ %>
+
+            <tr>
+            <th scope="row" class="py-4"><%=orderTranferWithdraw%></th>
+            <td  class="fs-5 text-warning py-4"><%=transferwithdraw.action%></td>
+            <td  class="fs-5 py-4"><%=data.bank.user.firstname%> <%=data.bank.user.lastname%></td>
+
+            <td  class="fs-5 py-4"><%= transferwithdraw.amount%></td>
+            <td  class="fs-5 py-4"><%=transferwithdraw.to.user.firstname + " " + transferwithdraw.to.user.lastname%></td>
+            <td  class="fs-5 py-4"><%=transferwithdraw.to.bankName %></td>
+            <td  class="fs-5 py-4"><%= transferwithdraw.createdAt.toString().split("GMT")[0] %></td>
+            </tr>
+            <%orderTranferWithdraw = orderTranferWithdraw + 1%>
+        <% }) %>
+    </tbody>
+  </table>
+
+  <table class="table" id="table-transfer-deposit">
+    <thead>
+      <tr>
+        <th scope="col" class="fs-5 py-4">#</th>
+        <th scope="col" class="fs-5 py-4">Action</th>
+        <th scope="col" class="fs-5 py-4">From</th>
+        <th scope="col" class="fs-5 py-4">Amount</th>
+        <th scope="col" class="fs-5 py-4">To</th>
+        <th scope="col" class="fs-5 py-4">Bank Name</th>
+        <th scope="col" class="fs-5 py-4">Datetime</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% let orderTranferDeposit = 1 %>
+
+        <% data.transferDeposit.forEach( transferdeposit=>{ %>
+
+            <tr>
+            <th scope="row" class="py-4"><%=orderTranferDeposit%></th>
+            <td  class="fs-5 text-warning py-4"><%=transferdeposit.action%></td>
+            <td  class="fs-5 py-4"><%=transferdeposit.from.user.firstname + " " + transferdeposit.from.user.lastname %></td>
+            <td  class="fs-5 py-4"><%= transferdeposit.amount%></td>
+            <td  class="fs-5 py-4"><%= data.bank.user.firstname + " " + data.bank.user.lastname %></td>
+            <td  class="fs-5 py-4"><%=transferdeposit.from.bankName%></td>
+            <td  class="fs-5 py-4"><%= transferdeposit.createdAt.toString().split("GMT")[0] %></td>
+            </tr>
+            <%orderTranferDeposit = orderTranferDeposit + 1%>
+        <% }) %>
+    </tbody>
+  </table>

@@ -1,0 +1,38 @@
+<button  class="btn btn-secondary btn-lg my-2" data-bs-toggle="modal" data-bs-target="#showForm">
+    Add Bank Account
+  </button>
+<div class="modal fade" id="showForm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ADD BANK ACCOUNT</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/addBankAccount">
+                    <div class="form-group">
+                        <label for="Bank Name">Bank Name</label>
+                        <select id="BankName" name="bankName" class="form-control" required>
+                            <option disabled selected value>Select a bank name</option>
+                            <option value="Kasikorn Bank">Kasikorn Bank</option>
+                            <option value="Siam Commercial Bank">Siam Commercial Bank</option>
+                            <option value="Bangkok Bank">Bangkok Bank</option>
+                            <option value="TMB Bank">TMB Bank</option>
+                            <option value="Krungthai Bank">Krungthai Bank</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="Bank Account">Bank Account</label>
+                        <input type="text" class="form-control" id="Bank Account" name="accountNumber" placeholder="1111111111" maxlength=10 minlength=10  required>
+                        <small class="my-0 text-danger">*length 10 characters and numbers only.</small>
+                    </div>
+                    <button type="submit" hidden id="createBankAcc"></button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button class="btn btn-success" id="btn-save-createBankAcc" >Save</button>
+            </div>
+        </div>
+    </div>
+</div>
